@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moving — Danyang Wu</title>
+  <meta name="description" content="Short video observations — water, weather, climbing, shadows, streets, objects, hands, landscapes.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <a href="/" class="site-title">Danyang Wu</a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/rock/" class="nav-link">Rock</a>
+      <a href="/clay/" class="nav-link">Clay</a>
+      <a href="/moving/" class="nav-link nav-link--active" aria-current="page">Moving</a>
+      <a href="/collected/" class="nav-link">Collected</a>
+      <a href="/about/" class="nav-link">About</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <div class="section-header">
+      <h1>Moving</h1>
+    </div>
+
+    <div class="video-grid">
+
+      <!--
+        ============================================================
+        VIDEO ITEM
+        To add a new video:
+        1. Place the .mp4 file in /assets/videos/
+        2. Create a poster image (screenshot) in /assets/images/videos/
+        3. Copy this block and update src, poster, alt, title, meta
+
+        Videos use native browser controls — no JavaScript.
+        preload="none" ensures videos don't load until the user
+        clicks play, keeping the page fast.
+        ============================================================
+      -->
+
+      <article class="video-item">
+        <video
+          controls
+          muted
+          loop
+          playsinline
+          preload="none"
+          poster="/assets/images/placeholder-video.svg"
+          width="1280" height="720"
+          aria-label="[Replace: describe the video]"
+        >
+          <!-- REPLACE: uncomment and update with your video file -->
+          <!-- <source src="/assets/videos/your-video-01.mp4" type="video/mp4"> -->
+          Your browser does not support the video element.
+        </video>
+        <div class="video-info">
+          <h3>[Video title]</h3>
+          <p class="video-meta">[Location] · [Year]</p>
+          <span class="video-duration">0:08</span>
+        </div>
+      </article>
+
+      <article class="video-item">
+        <video
+          controls muted loop playsinline
+          preload="none"
+          poster="/assets/images/placeholder-video.svg"
+          width="1280" height="720"
+          aria-label="[Replace: describe the video]"
+        >
+          <!-- <source src="/assets/videos/your-video-02.mp4" type="video/mp4"> -->
+        </video>
+        <div class="video-info">
+          <h3>[Video title]</h3>
+          <p class="video-meta">[Location] · [Year]</p>
+          <span class="video-duration">0:12</span>
+        </div>
+      </article>
+
+      <article class="video-item">
+        <video
+          controls muted loop playsinline
+          preload="none"
+          poster="/assets/images/placeholder-video.svg"
+          width="720" height="1280"
+          aria-label="[Replace: describe the video]"
+        >
+          <!-- <source src="/assets/videos/your-video-03.mp4" type="video/mp4"> -->
+        </video>
+        <div class="video-info">
+          <h3>[Video title]</h3>
+          <p class="video-meta">[Location] · [Year]</p>
+          <span class="video-duration">0:06</span>
+        </div>
+      </article>
+
+      <article class="video-item">
+        <video
+          controls muted loop playsinline
+          preload="none"
+          poster="/assets/images/placeholder-video.svg"
+          width="1280" height="720"
+          aria-label="[Replace: describe the video]"
+        >
+          <!-- <source src="/assets/videos/your-video-04.mp4" type="video/mp4"> -->
+        </video>
+        <div class="video-info">
+          <h3>[Video title]</h3>
+          <p class="video-meta">[Location] · [Year]</p>
+          <span class="video-duration">0:15</span>
+        </div>
+      </article>
+
+      <article class="video-item">
+        <video
+          controls muted loop playsinline
+          preload="none"
+          poster="/assets/images/placeholder-video.svg"
+          width="1280" height="720"
+          aria-label="[Replace: describe the video]"
+        >
+          <!-- <source src="/assets/videos/your-video-05.mp4" type="video/mp4"> -->
+        </video>
+        <div class="video-info">
+          <h3>[Video title]</h3>
+          <p class="video-meta">[Location] · [Year]</p>
+          <span class="video-duration">0:10</span>
+        </div>
+      </article>
+
+      <article class="video-item">
+        <video
+          controls muted loop playsinline
+          preload="none"
+          poster="/assets/images/placeholder-video.svg"
+          width="1280" height="720"
+          aria-label="[Replace: describe the video]"
+        >
+          <!-- <source src="/assets/videos/your-video-06.mp4" type="video/mp4"> -->
+        </video>
+        <div class="video-info">
+          <h3>[Video title]</h3>
+          <p class="video-meta">[Location] · [Year]</p>
+          <span class="video-duration">0:09</span>
+        </div>
+      </article>
+
+      <!--
+        TEMPLATE: Copy the block below to add a new video.
+
+        <article class="video-item">
+          <video controls muted loop playsinline preload="none"
+                 poster="/assets/images/videos/poster.jpg"
+                 width="1280" height="720"
+                 aria-label="Describe what the video shows">
+            <source src="/assets/videos/filename.mp4" type="video/mp4">
+          </video>
+          <div class="video-info">
+            <h3>Title</h3>
+            <p class="video-meta">Location · Year</p>
+            <span class="video-duration">0:10</span>
+          </div>
+        </article>
+      -->
+
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-name">Danyang Wu</span>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="mailto:hello@danyanghere.com">Email</a>
+        <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>

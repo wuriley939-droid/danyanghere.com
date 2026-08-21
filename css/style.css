@@ -1,0 +1,952 @@
+/* ============================================================
+   DANYANG WU — VISUAL ARCHIVE
+   Complete stylesheet — no JavaScript required
+   ============================================================ */
+
+
+/* ============================================================
+   1. DESIGN TOKENS
+   ============================================================ */
+
+:root {
+  /* Colors */
+  --bg:              #F5F2EE;
+  --text:            #1A1A1A;
+  --text-secondary:  #6B6560;
+  --text-tertiary:   #A39E98;
+  --border:          #E0DCD7;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+               Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  /* Spacing (8px base) */
+  --space-xs:      0.5rem;   /*  8px */
+  --space-sm:      1rem;     /* 16px */
+  --space-md:      2rem;     /* 32px */
+  --space-lg:      4rem;     /* 64px */
+  --space-xl:      8rem;     /* 128px */
+  --space-section: clamp(5rem, 12vh, 10rem);
+
+  /* Layout */
+  --max-width:     1400px;
+  --content-width: 860px;
+  --gutter:        clamp(1.25rem, 5vw, 3rem);
+}
+
+
+/* ============================================================
+   2. RESET & BASE
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* ============================================================
+   3. TYPOGRAPHY
+   ============================================================ */
+
+h1, h2, h3, h4 {
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  letter-spacing: -0.005em;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+p {
+  max-width: 60ch;
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-small {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.text-caption {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.text-statement {
+  font-size: clamp(1.125rem, 2vw, 1.3125rem);
+  font-weight: 300;
+  line-height: 1.55;
+  font-style: italic;
+  max-width: 48ch;
+}
+
+
+/* ============================================================
+   4. LAYOUT UTILITIES
+   ============================================================ */
+
+.container {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.container--narrow {
+  max-width: var(--content-width);
+}
+
+.page-padding {
+  padding-top: var(--space-section);
+  padding-bottom: var(--space-section);
+}
+
+
+/* ============================================================
+   5. SKIP LINK (Accessibility)
+   ============================================================ */
+
+.skip-link {
+  position: absolute;
+  top: -3rem;
+  left: var(--gutter);
+  background: var(--text);
+  color: var(--bg);
+  padding: var(--space-xs) var(--space-sm);
+  font-size: 0.8125rem;
+  z-index: 200;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: var(--space-xs);
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+
+/* ============================================================
+   6. SITE HEADER & NAVIGATION
+   ============================================================ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: var(--space-sm) var(--gutter);
+  background-color: rgba(245, 242, 238, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.site-title {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-md);
+  align-items: baseline;
+}
+
+.nav-link {
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+  padding-bottom: 2px;
+}
+
+.nav-link--active {
+  color: var(--text);
+}
+
+@media (hover: hover) {
+  .nav-link:hover {
+    color: var(--text);
+  }
+}
+
+
+/* ============================================================
+   7. HOMEPAGE
+   ============================================================ */
+
+.home-stream {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-lg) 0 var(--space-section);
+}
+
+.home-item {
+  padding: 0 var(--gutter);
+  margin-bottom: var(--space-section);
+}
+
+.home-item:last-child {
+  margin-bottom: 0;
+}
+
+.home-item a {
+  display: block;
+}
+
+/* Size variants */
+.home-item--large   { width: min(75vw, 1100px); }
+.home-item--medium  { width: min(50vw, 700px);  }
+.home-item--small   { width: min(30vw, 400px);  }
+
+/* Position variants */
+.home-item--left    { align-self: flex-start;  }
+.home-item--right   { align-self: flex-end;    }
+.home-item--center  { align-self: center;      }
+
+/* Home item caption (category hint) */
+.home-item .item-label {
+  margin-top: var(--space-xs);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  transition: opacity 0.3s ease;
+}
+
+@media (hover: hover) {
+  .home-item .item-label {
+    opacity: 0;
+  }
+  .home-item:hover .item-label {
+    opacity: 1;
+  }
+}
+
+/* Home video */
+.home-video video {
+  width: 100%;
+}
+
+/* Static poster fallback for reduced-motion */
+.home-video .video-poster-fallback {
+  display: none;
+}
+
+
+/* ============================================================
+   8. SECTION HEADERS
+   ============================================================ */
+
+.section-header {
+  padding: var(--space-section) var(--gutter) var(--space-lg);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section-header h1 {
+  margin-bottom: var(--space-xs);
+}
+
+.section-header .section-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+
+/* ============================================================
+   9. PHOTOGRAPHY INDEX
+   ============================================================ */
+
+.projects-list {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter) var(--space-section);
+}
+
+.project-card {
+  display: block;
+  margin-bottom: var(--space-section);
+}
+
+.project-card:last-child {
+  margin-bottom: 0;
+}
+
+.project-card img {
+  width: 100%;
+}
+
+.project-card-info {
+  margin-top: var(--space-sm);
+}
+
+.project-card-info h2 {
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.project-card-info .project-year {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+}
+
+
+/* ============================================================
+   10. GALLERY SYSTEM (Photography Projects)
+   ============================================================ */
+
+.project-hero {
+  padding: var(--space-section) var(--gutter) var(--space-lg);
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.project-hero h1 {
+  margin-bottom: 0.25rem;
+}
+
+.project-hero .project-year {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.project-statement {
+  padding: 0 var(--gutter);
+  max-width: var(--content-width);
+  margin: 0 auto var(--space-section);
+}
+
+.project-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: var(--space-section);
+}
+
+.gallery-item {
+  padding: 0 var(--gutter);
+  margin-bottom: var(--space-section);
+  max-width: var(--max-width);
+}
+
+.gallery-item:last-child {
+  margin-bottom: 0;
+}
+
+.gallery-item img {
+  width: 100%;
+}
+
+.gallery-item figcaption {
+  margin-top: var(--space-xs);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  transition: opacity 0.3s ease;
+}
+
+/* Reveal captions on hover (desktop only) */
+@media (hover: hover) {
+  .gallery-item figcaption {
+    opacity: 0;
+  }
+  .gallery-item:hover figcaption,
+  .gallery-item:focus-within figcaption {
+    opacity: 1;
+  }
+}
+
+/* Layout variants */
+.gallery-item--full {
+  width: 100%;
+}
+
+.gallery-item--center {
+  width: 65%;
+}
+
+.gallery-item--left {
+  width: 55%;
+  align-self: flex-start;
+}
+
+.gallery-item--right {
+  width: 55%;
+  align-self: flex-end;
+}
+
+.gallery-item--small {
+  width: 38%;
+}
+
+/* Pairs: two images side by side */
+.gallery-pair {
+  display: flex;
+  gap: var(--space-md);
+  width: 85%;
+  max-width: var(--max-width);
+  padding: 0 var(--gutter);
+  margin-bottom: var(--space-section);
+}
+
+.gallery-pair .gallery-item {
+  flex: 1;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+
+/* ============================================================
+   11. CERAMICS
+   ============================================================ */
+
+.ceramics-grid {
+  columns: 2;
+  column-gap: var(--space-lg);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter) var(--space-section);
+}
+
+.ceramic-piece {
+  break-inside: avoid;
+  margin-bottom: var(--space-lg);
+}
+
+.ceramic-piece img {
+  width: 100%;
+}
+
+.ceramic-info {
+  margin-top: var(--space-xs);
+}
+
+.ceramic-info h3 {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.ceramic-info .ceramic-meta {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  margin-top: 0.125rem;
+  letter-spacing: 0.03em;
+}
+
+/* Hover reveal for ceramic metadata */
+@media (hover: hover) {
+  .ceramic-info {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .ceramic-piece:hover .ceramic-info,
+  .ceramic-piece:focus-within .ceramic-info {
+    opacity: 1;
+  }
+}
+
+
+/* ============================================================
+   12. VIDEO / MOVING
+   ============================================================ */
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(360px, 100%), 1fr));
+  gap: var(--space-lg);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter) var(--space-section);
+}
+
+.video-item video {
+  width: 100%;
+  background-color: var(--border);
+}
+
+.video-info {
+  margin-top: var(--space-xs);
+}
+
+.video-info h3 {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.video-info .video-meta {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  margin-top: 0.125rem;
+  letter-spacing: 0.03em;
+}
+
+.video-duration {
+  display: inline-block;
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  color: var(--text-tertiary);
+  margin-top: 0.25rem;
+}
+
+
+/* ============================================================
+   13. FRUIT / COLLECTED
+   ============================================================ */
+
+.fruit-intro {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter) var(--space-lg);
+}
+
+.fruit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-md);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter) var(--space-section);
+}
+
+.fruit-entry {
+  transition: transform 0.3s ease;
+}
+
+.fruit-entry img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.fruit-info {
+  margin-top: var(--space-xs);
+}
+
+.fruit-info .fruit-name {
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.fruit-info .fruit-place {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  margin-top: 0.125rem;
+}
+
+.fruit-info .fruit-year {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  margin-top: 0.0625rem;
+}
+
+/* Slight lift on hover */
+@media (hover: hover) {
+  .fruit-entry:hover {
+    transform: translateY(-2px);
+  }
+}
+
+
+/* ============================================================
+   14. ABOUT
+   ============================================================ */
+
+.about-layout {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--space-section) var(--gutter);
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.about-photo img {
+  width: 100%;
+}
+
+.about-text p {
+  margin-bottom: var(--space-sm);
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-section {
+  margin-top: var(--space-lg);
+}
+
+.about-section h2 {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.about-section ul li {
+  font-size: 0.9375rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.about-contact {
+  margin-top: var(--space-lg);
+}
+
+.about-contact a {
+  display: inline-block;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-right: var(--space-md);
+  padding-bottom: 1px;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+@media (hover: hover) {
+  .about-contact a:hover {
+    color: var(--text);
+    border-color: var(--text);
+  }
+}
+
+
+/* ============================================================
+   15. FOOTER
+   ============================================================ */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: var(--space-md) var(--gutter);
+  margin-top: var(--space-section);
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.footer-name {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.footer-links {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.footer-links a {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  transition: color 0.2s ease;
+}
+
+@media (hover: hover) {
+  .footer-links a:hover {
+    color: var(--text);
+  }
+}
+
+
+/* ============================================================
+   16. FIGURE & IMAGE STYLES
+   ============================================================ */
+
+figure {
+  position: relative;
+}
+
+figure img {
+  display: block;
+}
+
+/* Subtle scale on image hover (desktop) */
+@media (hover: hover) {
+  .gallery-item img,
+  .project-card img,
+  .home-item img {
+    transition: transform 0.5s ease;
+  }
+
+  .gallery-item:hover img,
+  .project-card:hover img,
+  .home-item:hover img {
+    transform: scale(1.015);
+  }
+}
+
+/* Overflow hidden on figures to contain scale */
+.gallery-item,
+.project-card,
+.home-item a {
+  overflow: hidden;
+}
+
+/* Ensure figcaption is outside overflow hidden */
+.gallery-item {
+  overflow: visible;
+}
+
+.gallery-item img {
+  overflow: hidden;
+}
+
+
+/* ============================================================
+   17. FOCUS STYLES
+   ============================================================ */
+
+:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+}
+
+a:focus:not(:focus-visible) {
+  outline: none;
+}
+
+
+/* ============================================================
+   18. RESPONSIVE — TABLET (≤ 1024px)
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .home-item--large  { width: min(85vw, 1000px); }
+  .home-item--medium { width: min(60vw, 600px);  }
+  .home-item--small  { width: min(40vw, 360px);  }
+
+  .gallery-item--center { width: 75%; }
+  .gallery-item--left,
+  .gallery-item--right  { width: 65%; }
+  .gallery-item--small  { width: 45%; }
+
+  .gallery-pair { width: 90%; }
+}
+
+
+/* ============================================================
+   19. RESPONSIVE — MOBILE (≤ 768px)
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    gap: var(--space-xs);
+    padding-top: var(--space-sm);
+    padding-bottom: var(--space-sm);
+  }
+
+  .site-nav {
+    gap: var(--space-xs) var(--space-sm);
+  }
+
+  /* Homepage */
+  .home-item--large  { width: 100%; }
+  .home-item--medium { width: 85%;  }
+  .home-item--small  { width: 65%;  }
+
+  /* Gallery */
+  .gallery-item--full,
+  .gallery-item--center,
+  .gallery-item--left,
+  .gallery-item--right,
+  .gallery-item--small {
+    width: 100%;
+    align-self: center;
+  }
+
+  .gallery-pair {
+    flex-direction: column;
+    width: 100%;
+    gap: var(--space-lg);
+  }
+
+  /* Ceramics */
+  .ceramics-grid {
+    columns: 1;
+  }
+
+  /* Videos */
+  .video-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  /* Fruit */
+  .fruit-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+
+  /* About */
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .about-photo {
+    max-width: 280px;
+  }
+}
+
+
+/* ============================================================
+   20. RESPONSIVE — SMALL MOBILE (≤ 480px)
+   ============================================================ */
+
+@media (max-width: 480px) {
+  .nav-link {
+    font-size: 0.75rem;
+  }
+
+  .home-item--small {
+    width: 80%;
+  }
+
+  .fruit-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xs);
+  }
+
+  .fruit-info .fruit-name {
+    font-size: 0.8125rem;
+  }
+
+  .fruit-info .fruit-place,
+  .fruit-info .fruit-year {
+    font-size: 0.6875rem;
+  }
+}
+
+
+/* ============================================================
+   21. REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Hide autoplay videos, show poster fallback */
+  .home-video video {
+    display: none;
+  }
+
+  .home-video .video-poster-fallback {
+    display: block;
+  }
+}
+
+
+/* ============================================================
+   22. PRINT
+   ============================================================ */
+
+@media print {
+  .site-header,
+  .site-footer,
+  .skip-link {
+    display: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+}

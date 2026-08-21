@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock, Temporarily — Danyang Wu</title>
+  <meta name="description" content="When does rock become a route—and for how long?">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <a href="/" class="site-title">Danyang Wu</a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/rock/" class="nav-link nav-link--active">Rock</a>
+      <a href="/clay/" class="nav-link">Clay</a>
+      <a href="/moving/" class="nav-link">Moving</a>
+      <a href="/collected/" class="nav-link">Collected</a>
+      <a href="/about/" class="nav-link">About</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- Project header -->
+    <div class="project-hero">
+      <h1>Rock, Temporarily</h1>
+      <p class="project-year">2024–ongoing</p>
+    </div>
+
+    <!-- Opening image — full width -->
+    <div class="project-gallery">
+
+      <figure class="gallery-item gallery-item--full">
+        <!-- REPLACE: src with opening photograph -->
+        <img
+          src="/assets/images/placeholder-landscape.svg"
+          alt="[Replace: describe opening image — e.g., Limestone wall at dusk, single bolt visible]"
+          width="1200" height="800"
+          loading="eager"
+          fetchpriority="high"
+        >
+      </figure>
+
+      <!-- Project statement -->
+      <div class="project-statement">
+        <p class="text-statement">When does rock become a route—and for how long?</p>
+      </div>
+
+      <!--
+        ============================================================
+        GALLERY IMAGES
+
+        Layout classes control size and position:
+          gallery-item--full    → 100% width
+          gallery-item--center  → 65% width, centered
+          gallery-item--left    → 55% width, aligned left
+          gallery-item--right   → 55% width, aligned right
+          gallery-item--small   → 38% width, centered
+
+        For pairs, wrap two gallery-items in a .gallery-pair div.
+
+        IMAGE ORDER MATTERS — arrange figures in your intended
+        viewing sequence. The order in the HTML = the order on screen.
+        ============================================================
+      -->
+
+      <!-- Image 2 — centered -->
+      <figure class="gallery-item gallery-item--center">
+        <img
+          src="/assets/images/placeholder-landscape.svg"
+          alt="[Replace: describe photograph]"
+          width="1200" height="800"
+          loading="lazy"
+        >
+        <figcaption>[Location] · [Year]</figcaption>
+      </figure>
+
+      <!-- Images 3 & 4 — pair -->
+      <div class="gallery-pair">
+        <figure class="gallery-item">
+          <img
+            src="/assets/images/placeholder-portrait.svg"
+            alt="[Replace: describe photograph]"
+            width="800" height="1200"
+            loading="lazy"
+          >
+          <figcaption>[Location] · [Year]</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img
+            src="/assets/images/placeholder-landscape.svg"
+            alt="[Replace: describe photograph]"
+            width="1200" height="800"
+            loading="lazy"
+          >
+          <figcaption>[Location] · [Year]</figcaption>
+        </figure>
+      </div>
+
+      <!-- Image 5 — full width -->
+      <figure class="gallery-item gallery-item--full">
+        <img
+          src="/assets/images/placeholder-landscape.svg"
+          alt="[Replace: describe photograph]"
+          width="1200" height="800"
+          loading="lazy"
+        >
+        <figcaption>[Location] · [Year]</figcaption>
+      </figure>
+
+      <!-- Image 6 — offset right -->
+      <figure class="gallery-item gallery-item--right">
+        <img
+          src="/assets/images/placeholder-portrait.svg"
+          alt="[Replace: describe photograph]"
+          width="800" height="1200"
+          loading="lazy"
+        >
+        <figcaption>[Location] · [Year]</figcaption>
+      </figure>
+
+      <!-- Image 7 — small centered -->
+      <figure class="gallery-item gallery-item--small">
+        <img
+          src="/assets/images/placeholder-square.svg"
+          alt="[Replace: describe photograph — detail/close-up]"
+          width="800" height="800"
+          loading="lazy"
+        >
+        <figcaption>[Location] · [Year]</figcaption>
+      </figure>
+
+      <!-- Image 8 — offset left -->
+      <figure class="gallery-item gallery-item--left">
+        <img
+          src="/assets/images/placeholder-landscape.svg"
+          alt="[Replace: describe photograph]"
+          width="1200" height="800"
+          loading="lazy"
+        >
+        <figcaption>[Location] · [Year]</figcaption>
+      </figure>
+
+      <!-- Image 9 — centered -->
+      <figure class="gallery-item gallery-item--center">
+        <img
+          src="/assets/images/placeholder-portrait.svg"
+          alt="[Replace: describe photograph]"
+          width="800" height="1200"
+          loading="lazy"
+        >
+        <figcaption>[Location] · [Year]</figcaption>
+      </figure>
+
+      <!-- Image 10 — full width, closing image -->
+      <figure class="gallery-item gallery-item--full">
+        <img
+          src="/assets/images/placeholder-landscape.svg"
+          alt="[Replace: describe closing photograph]"
+          width="1200" height="800"
+          loading="lazy"
+        >
+      </figure>
+
+      <!--
+        TEMPLATE: To add more images, copy a gallery-item block
+        and place it in the sequence where you want it to appear.
+
+        <figure class="gallery-item gallery-item--center">
+          <img src="/assets/images/photography/your-image.jpg"
+               alt="Describe the image" width="1200" height="800" loading="lazy">
+          <figcaption>Location · Year</figcaption>
+        </figure>
+      -->
+
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-name">Danyang Wu</span>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="mailto:hello@danyanghere.com">Email</a>
+        <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
