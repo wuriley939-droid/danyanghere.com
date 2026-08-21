@@ -634,6 +634,10 @@ p {
   align-items: start;
 }
 
+.about-layout--text-only {
+  grid-template-columns: 1fr;
+}
+
 .about-photo img {
   width: 100%;
 }
