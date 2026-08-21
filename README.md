@@ -150,18 +150,15 @@ In your Cloudflare dashboard for `danyanghere.com`:
 1. Go to **DNS → Records**
 2. Add these records:
 
-| Type | Name | Content | Proxy |
-|------|------|---------|-------|
-| `CNAME` | `@` | `YOUR-GITHUB-USERNAME.github.io` | DNS only (grey cloud) |
-| `CNAME` | `www` | `YOUR-GITHUB-USERNAME.github.io` | DNS only (grey cloud) |
+| Type | Name | Content | Proxy status |
+|------|------|---------|--------------|
+| `CNAME` | `@` | `wuriley939-droid.github.io` | **DNS only** (Grey cloud ☁️) |
+| `CNAME` | `www` | `wuriley939-droid.github.io` | **DNS only** (Grey cloud ☁️) |
 
-> **Important:** Set the proxy status to **DNS only** (grey cloud icon), not Proxied (orange cloud). GitHub Pages needs to handle its own SSL.
+> **Important:** Set the proxy status to **DNS only** (grey cloud icon), not Proxied (orange cloud). GitHub Pages needs to directly verify the domain and issue its SSL certificate.
 
-3. In Cloudflare **SSL/TLS**, set encryption mode to **Full**
-4. Wait a few minutes, then check your GitHub Pages settings — it should show "DNS check successful"
-5. Enable **Enforce HTTPS** in GitHub Pages settings
-
-Replace `YOUR-GITHUB-USERNAME` with your actual GitHub username in the CNAME records above.
+3. In Cloudflare **SSL/TLS**, set encryption mode to **Full** (or **Full (strict)**).
+4. Once the DNS records resolve, go to your GitHub repo **Settings → Pages** and check **Enforce HTTPS**.
 
 ---
 
