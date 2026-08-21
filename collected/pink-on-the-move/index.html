@@ -10,6 +10,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css?v=4">
+  <style>
+    .pink-on-the-move-photo {
+      width: min(65%, 760px);
+    }
+
+    .pink-on-the-move-photo img {
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @media (max-width: 768px) {
+      .pink-on-the-move-photo {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -34,7 +51,7 @@
     </div>
 
     <div class="project-gallery">
-      <figure class="gallery-item gallery-item--full">
+      <figure class="gallery-item pink-on-the-move-photo">
         <img
           src="/assets/images/photography/rock-temp-01.jpg"
           alt="Pink climbing rope knotted across a sunlit rock face"
