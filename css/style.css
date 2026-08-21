@@ -59,6 +59,12 @@ body {
   line-height: 1.6;
   color: var(--text);
   background-color: var(--bg);
+  background-image:
+    linear-gradient(rgba(245, 242, 238, 0.78), rgba(245, 242, 238, 0.78)),
+    url('/assets/images/backgrounds/rock-no-rope.png');
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -814,6 +820,10 @@ a:focus:not(:focus-visible) {
    ============================================================ */
 
 @media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+
   .site-header {
     flex-direction: column;
     gap: var(--space-xs);
