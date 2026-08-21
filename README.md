@@ -1,4 +1,4 @@
-# Danyang.Riley — Visual Archive
+# Danyang — Visual Archive
 
 Personal website at [danyanghere.com](https://danyanghere.com).  
 Pure HTML + CSS. No JavaScript. Hosted on GitHub Pages.
@@ -199,4 +199,4 @@ Based on 8px increments: 8 → 16 → 32 → 64 → 128px
 ## License
 
 All photographs, videos, ceramic documentation, and written content  
-© Danyang.Riley. All rights reserved.
+© Danyang. All rights reserved.
