@@ -208,7 +208,7 @@ p {
   font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.1em;
-  text-transform: lowercase;
+  text-transform: lowercase !important;
 }
 
 .site-nav {
@@ -709,7 +709,7 @@ p {
 .footer-name {
   font-size: 0.75rem;
   letter-spacing: 0.06em;
-  text-transform: lowercase;
+  text-transform: lowercase !important;
   color: var(--text-tertiary);
 }
 
