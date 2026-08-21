@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "danyanghere-com",
+  "compatibility_date": "2026-08-20",
+  "assets": {
+    "directory": ".",
+    "html_handling": "auto-trailing-slash"
+  },
+  "routes": [
+    {
+      "pattern": "danyanghere.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.danyanghere.com",
+      "custom_domain": true
+    }
+  ]
+}
