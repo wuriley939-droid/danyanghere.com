@@ -81,7 +81,7 @@ a {
   html,
   body,
   body * {
-    cursor: url('/assets/cursors/rock.svg') 3 4, auto !important;
+    cursor: url('/assets/cursors/brush.svg') 3 3, auto !important;
   }
 
   a,
@@ -92,13 +92,13 @@ a {
   textarea,
   summary,
   label {
-    cursor: url('/assets/cursors/rock-active.svg') 3 4, auto !important;
+    cursor: url('/assets/cursors/brush-active.svg') 3 3, auto !important;
   }
 
   html.page-clay,
   html.page-clay body,
   html.page-clay body * {
-    cursor: url('/assets/cursors/loop-tool.svg') 25 3, auto !important;
+    cursor: url('/assets/cursors/loop-tool.svg') 3 3, auto !important;
   }
 
   html.page-clay a,
@@ -109,7 +109,7 @@ a {
   html.page-clay textarea,
   html.page-clay summary,
   html.page-clay label {
-    cursor: url('/assets/cursors/loop-tool-active.svg') 25 3, auto !important;
+    cursor: url('/assets/cursors/loop-tool-active.svg') 3 3, auto !important;
   }
 }
 
