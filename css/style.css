@@ -76,6 +76,43 @@ a {
   text-decoration: none;
 }
 
+/* Native SVG cursors: hidden automatically on touch-only devices. */
+@media (hover: hover) and (pointer: fine) {
+  html,
+  body,
+  body * {
+    cursor: url('/assets/cursors/rock.svg') 3 4, auto !important;
+  }
+
+  a,
+  button,
+  [role='button'],
+  input,
+  select,
+  textarea,
+  summary,
+  label {
+    cursor: url('/assets/cursors/rock-active.svg') 3 4, auto !important;
+  }
+
+  html.page-clay,
+  html.page-clay body,
+  html.page-clay body * {
+    cursor: url('/assets/cursors/sponge.svg') 3 4, auto !important;
+  }
+
+  html.page-clay a,
+  html.page-clay button,
+  html.page-clay [role='button'],
+  html.page-clay input,
+  html.page-clay select,
+  html.page-clay textarea,
+  html.page-clay summary,
+  html.page-clay label {
+    cursor: url('/assets/cursors/sponge-active.svg') 3 4, auto !important;
+  }
+}
+
 ul, ol {
   list-style: none;
 }
@@ -249,22 +286,13 @@ p {
    ============================================================ */
 
 .home-carousel-layout {
-  display: grid;
-  grid-template-columns: minmax(220px, min(30vw, 390px)) minmax(0, 1fr);
-  grid-template-rows: minmax(460px, 68vh) clamp(180px, 24vw, 310px);
-  gap: clamp(2.5rem, 7vw, 8rem);
   padding: var(--space-md) var(--gutter) var(--space-section);
 }
 
 .home-carousel--vertical {
-  grid-column: 1;
-  grid-row: 1;
-  min-width: 0;
-}
-
-.home-carousel--horizontal {
-  grid-column: 1 / -1;
-  grid-row: 2;
+  width: min(30vw, 390px);
+  height: 68vh;
+  min-height: 460px;
   min-width: 0;
 }
 
@@ -285,11 +313,6 @@ p {
   mask-image: linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent);
 }
 
-.home-carousel--horizontal .home-carousel-viewport {
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
-  mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
-}
-
 .home-carousel-track {
   display: flex;
   width: max-content;
@@ -301,11 +324,6 @@ p {
   flex-direction: column;
   width: 100%;
   animation: home-carousel-up var(--carousel-duration, 30s) linear infinite;
-}
-
-.home-carousel-track--horizontal {
-  height: 100%;
-  animation: home-carousel-left var(--carousel-duration, 90s) linear infinite;
 }
 
 .home-carousel-sequence {
@@ -320,11 +338,6 @@ p {
   padding-bottom: var(--space-md);
 }
 
-.home-carousel-track--horizontal .home-carousel-sequence {
-  height: 100%;
-  padding-right: var(--space-md);
-}
-
 .home-carousel-item {
   position: relative;
   display: block;
@@ -336,11 +349,6 @@ p {
 .home-carousel--vertical .home-carousel-item {
   width: 100%;
   aspect-ratio: 3 / 4;
-}
-
-.home-carousel--horizontal .home-carousel-item {
-  width: clamp(260px, 34vw, 520px);
-  height: 100%;
 }
 
 .home-carousel-item img {
@@ -385,11 +393,6 @@ p {
 @keyframes home-carousel-up {
   to { transform: translateY(-50%); }
 }
-
-@keyframes home-carousel-left {
-  to { transform: translateX(-50%); }
-}
-
 
 /* ============================================================
    8. SECTION HEADERS
@@ -924,7 +927,6 @@ a:focus:not(:focus-visible) {
 
   /* Homepage */
   .home-carousel-layout {
-    display: block;
     padding-top: var(--space-sm);
   }
 
@@ -932,15 +934,6 @@ a:focus:not(:focus-visible) {
     width: min(76vw, 360px);
     height: 62vh;
     min-height: 430px;
-  }
-
-  .home-carousel--horizontal {
-    height: clamp(170px, 48vw, 240px);
-    margin-top: var(--space-lg);
-  }
-
-  .home-carousel--horizontal .home-carousel-item {
-    width: clamp(240px, 74vw, 380px);
   }
 
   /* Gallery */

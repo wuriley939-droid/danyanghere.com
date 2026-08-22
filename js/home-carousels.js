@@ -1,36 +1,9 @@
 (() => {
   const sources = [
-    { src: '/assets/images/photography/ice-climbing-01.jpg', href: '/rock/rock-temporarily/', label: 'rock' },
-    { src: '/assets/images/photography/rock-temp-01.jpg', href: '/rock/rock-temporarily/', label: 'rock' },
-    { src: '/assets/images/photography/rock-temp-02.jpg', href: '/rock/rock-temporarily/', label: 'rock' },
-    { src: '/assets/images/photography/rock-temp-03.jpg', href: '/rock/rock-temporarily/', label: 'rock' },
-    { src: '/assets/images/photography/rock-temp-04.jpg', href: '/rock/rock-temporarily/', label: 'rock' },
-    { src: '/assets/images/photography/rock-temp-05.jpg', href: '/rock/rock-temporarily/', label: 'rock' },
-    { src: '/assets/images/photography/rock-temp-06.jpg', href: '/rock/rock-temporarily/', label: 'rock' },
-    { src: '/assets/images/photography/rock-temp-07.jpg', href: '/rock/rock-temporarily/', label: 'rock' },
-    { src: '/assets/images/photography/rock-temp-08.jpg', href: '/rock/rock-temporarily/', label: 'rock' },
-    { src: '/assets/images/photography/rock-temp-09.jpg', href: '/rock/rock-temporarily/', label: 'rock' },
-    { src: '/assets/images/photography/rock-temp-10.jpg', href: '/rock/rock-temporarily/', label: 'rock' },
-    { src: '/assets/images/photography/rock-temp-11.jpg', href: '/rock/rock-temporarily/', label: 'rock' },
-    { src: '/assets/images/photography/rock-temp-12.jpg', href: '/rock/rock-temporarily/', label: 'rock' },
     { src: '/assets/images/photography/xishuangbanna-vertical.jpg', href: '/rock/rock-temporarily/', label: 'rock' },
-    { src: '/assets/images/ceramics/clay-01.jpg', href: '/clay/', label: 'clay' },
-    { src: '/assets/images/ceramics/clay-02.jpg', href: '/clay/', label: 'clay' },
-    { src: '/assets/images/ceramics/clay-03.jpg', href: '/clay/', label: 'clay' },
-    { src: '/assets/images/ceramics/clay-04.jpg', href: '/clay/', label: 'clay' },
-    { src: '/assets/images/ceramics/clay-05.jpg', href: '/clay/', label: 'clay' },
-    { src: '/assets/images/ceramics/clay-06.jpg', href: '/clay/', label: 'clay' },
-    { src: '/assets/images/ceramics/clay-07.jpg', href: '/clay/', label: 'clay' },
-    { src: '/assets/images/ceramics/clay-08.jpg', href: '/clay/', label: 'clay' },
     { src: '/assets/images/ceramics/clay-09.jpg', href: '/clay/', label: 'clay' },
-    { src: '/assets/images/ceramics/clay-10.jpg', href: '/clay/', label: 'clay' },
-    { src: '/assets/images/ceramics/clay-11.jpg', href: '/clay/', label: 'clay' },
-    { src: '/assets/images/ceramics/clay-12.jpg', href: '/clay/', label: 'clay' },
-    { src: '/assets/images/observations/ferry-deck.jpg', href: '/collected/', label: 'collected' },
-    { src: '/assets/images/observations/tulips-ground.jpg', href: '/collected/', label: 'collected' },
     { src: '/assets/images/new-york-and-around/ny-around-01.webp', href: '/new-york-and-around/', label: 'new york and around' },
-    { src: '/assets/images/new-york-and-around/ny-around-02.webp', href: '/new-york-and-around/', label: 'new york and around' },
-    { src: '/assets/images/new-york-and-around/ny-around-03.webp', href: '/new-york-and-around/', label: 'new york and around' }
+    { src: '/assets/images/new-york-and-around/ny-around-02.webp', href: '/new-york-and-around/', label: 'new york and around' }
   ];
 
   const linearChannel = (value) => {
@@ -185,7 +158,7 @@
     const cycle = [...ordered, ...returnPath];
     track.style.setProperty(
       '--carousel-duration',
-      `${Math.max(orientation === 'portrait' ? 26 : 48, cycle.length * (orientation === 'portrait' ? 4.5 : 2.6))}s`
+      `${Math.max(52, cycle.length * 9)}s`
     );
     track.replaceChildren(makeSequence(cycle, false), makeSequence(cycle, true));
     viewport.setAttribute('aria-busy', 'false');
@@ -197,6 +170,5 @@
       .filter((result) => result.status === 'fulfilled')
       .map((result) => result.value);
     buildCarousel('portrait', smoothLightToDark(analyzed.filter((item) => item.orientation === 'portrait')));
-    buildCarousel('landscape', smoothLightToDark(analyzed.filter((item) => item.orientation === 'landscape')));
   });
 })();
