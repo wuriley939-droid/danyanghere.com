@@ -111,6 +111,23 @@ a {
   html.page-clay label {
     cursor: url('/assets/cursors/loop-tool-active.svg') 3 3, auto !important;
   }
+
+  html.page-new-york,
+  html.page-new-york body,
+  html.page-new-york body * {
+    cursor: url('/assets/cursors/mouse-chef.svg?v=1') 2 18, auto !important;
+  }
+
+  html.page-new-york a,
+  html.page-new-york button,
+  html.page-new-york [role='button'],
+  html.page-new-york input,
+  html.page-new-york select,
+  html.page-new-york textarea,
+  html.page-new-york summary,
+  html.page-new-york label {
+    cursor: url('/assets/cursors/mouse-chef-active.svg?v=1') 2 18, auto !important;
+  }
 }
 
 ul, ol {
