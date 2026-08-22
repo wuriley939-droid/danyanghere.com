@@ -787,9 +787,19 @@ body.pottery-dialog-open {
   padding: 0 var(--gutter) var(--space-section);
 }
 
-.video-grid--single {
-  grid-template-columns: minmax(110px, 140px);
-  justify-content: start;
+.video-grid--moving {
+  grid-template-columns: 1fr;
+  justify-content: stretch;
+}
+
+.video-item--above-trees {
+  width: 140px;
+}
+
+.video-item--on-their-way {
+  width: 100px;
+  margin-top: clamp(6rem, 12vw, 11rem);
+  margin-left: clamp(2rem, 14vw, 12rem);
 }
 
 .video-item video {
@@ -892,6 +902,12 @@ body.pottery-dialog-open {
   grid-template-columns: 1fr 1.5fr;
   gap: var(--space-lg);
   align-items: start;
+}
+
+.video-info .video-place {
+  margin-top: 0.125rem;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
 }
 
 .about-layout--text-only {
