@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;1,400&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css?v=15">
+  <link rel="stylesheet" href="/css/style.css?v=16">
 </head>
 <body>
 
@@ -33,21 +33,7 @@
       <h1>Moving</h1>
     </div>
 
-    <div class="video-grid">
-
-      <!--
-        ============================================================
-        VIDEO ITEM
-        To add a new video:
-        1. Place the .mp4 file in /assets/videos/
-        2. Create a poster image (screenshot) in /assets/images/videos/
-        3. Copy this block and update src, poster, alt, title, meta
-
-        Videos use native browser controls — no JavaScript.
-        preload="none" ensures videos don't load until the user
-        clicks play, keeping the page fast.
-        ============================================================
-      -->
+    <div class="video-grid video-grid--single">
 
       <article class="video-item">
         <video
@@ -55,124 +41,20 @@
           muted
           loop
           playsinline
-          preload="none"
-          poster="/assets/images/placeholder-video.svg"
-          width="1280" height="720"
-          aria-label="[Replace: describe the video]"
+          preload="metadata"
+          poster="/assets/images/videos/above-the-trees.jpg"
+          width="1440" height="1920"
+          aria-label="Pale butterflies drifting through a blue sky above the branches of a tree"
         >
-          <!-- REPLACE: uncomment and update with your video file -->
-          <!-- <source src="/assets/videos/your-video-01.mp4" type="video/mp4"> -->
+          <source src="/assets/videos/above-the-trees.mp4" type="video/mp4">
           Your browser does not support the video element.
         </video>
         <div class="video-info">
-          <h3>[Video title]</h3>
-          <p class="video-meta">[Location] · [Year]</p>
-          <span class="video-duration">0:08</span>
-        </div>
-      </article>
-
-      <article class="video-item">
-        <video
-          controls muted loop playsinline
-          preload="none"
-          poster="/assets/images/placeholder-video.svg"
-          width="1280" height="720"
-          aria-label="[Replace: describe the video]"
-        >
-          <!-- <source src="/assets/videos/your-video-02.mp4" type="video/mp4"> -->
-        </video>
-        <div class="video-info">
-          <h3>[Video title]</h3>
-          <p class="video-meta">[Location] · [Year]</p>
-          <span class="video-duration">0:12</span>
-        </div>
-      </article>
-
-      <article class="video-item">
-        <video
-          controls muted loop playsinline
-          preload="none"
-          poster="/assets/images/placeholder-video.svg"
-          width="720" height="1280"
-          aria-label="[Replace: describe the video]"
-        >
-          <!-- <source src="/assets/videos/your-video-03.mp4" type="video/mp4"> -->
-        </video>
-        <div class="video-info">
-          <h3>[Video title]</h3>
-          <p class="video-meta">[Location] · [Year]</p>
-          <span class="video-duration">0:06</span>
-        </div>
-      </article>
-
-      <article class="video-item">
-        <video
-          controls muted loop playsinline
-          preload="none"
-          poster="/assets/images/placeholder-video.svg"
-          width="1280" height="720"
-          aria-label="[Replace: describe the video]"
-        >
-          <!-- <source src="/assets/videos/your-video-04.mp4" type="video/mp4"> -->
-        </video>
-        <div class="video-info">
-          <h3>[Video title]</h3>
-          <p class="video-meta">[Location] · [Year]</p>
+          <h3>Above the Trees</h3>
+          <p class="video-meta">2024</p>
           <span class="video-duration">0:15</span>
         </div>
       </article>
-
-      <article class="video-item">
-        <video
-          controls muted loop playsinline
-          preload="none"
-          poster="/assets/images/placeholder-video.svg"
-          width="1280" height="720"
-          aria-label="[Replace: describe the video]"
-        >
-          <!-- <source src="/assets/videos/your-video-05.mp4" type="video/mp4"> -->
-        </video>
-        <div class="video-info">
-          <h3>[Video title]</h3>
-          <p class="video-meta">[Location] · [Year]</p>
-          <span class="video-duration">0:10</span>
-        </div>
-      </article>
-
-      <article class="video-item">
-        <video
-          controls muted loop playsinline
-          preload="none"
-          poster="/assets/images/placeholder-video.svg"
-          width="1280" height="720"
-          aria-label="[Replace: describe the video]"
-        >
-          <!-- <source src="/assets/videos/your-video-06.mp4" type="video/mp4"> -->
-        </video>
-        <div class="video-info">
-          <h3>[Video title]</h3>
-          <p class="video-meta">[Location] · [Year]</p>
-          <span class="video-duration">0:09</span>
-        </div>
-      </article>
-
-      <!--
-        TEMPLATE: Copy the block below to add a new video.
-
-        <article class="video-item">
-          <video controls muted loop playsinline preload="none"
-                 poster="/assets/images/videos/poster.jpg"
-                 width="1280" height="720"
-                 aria-label="Describe what the video shows">
-            <source src="/assets/videos/filename.mp4" type="video/mp4">
-          </video>
-          <div class="video-info">
-            <h3>Title</h3>
-            <p class="video-meta">Location · Year</p>
-            <span class="video-duration">0:10</span>
-          </div>
-        </article>
-      -->
 
     </div>
 

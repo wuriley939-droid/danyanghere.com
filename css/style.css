@@ -640,6 +640,11 @@ p {
   padding: 0 var(--gutter) var(--space-section);
 }
 
+.video-grid--single {
+  grid-template-columns: minmax(280px, 560px);
+  justify-content: start;
+}
+
 .video-item video {
   width: 100%;
   background-color: var(--border);
