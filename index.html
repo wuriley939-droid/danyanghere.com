@@ -9,7 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;1,400&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css?v=9">
+  <link rel="stylesheet" href="/css/style.css?v=10">
+  <script src="/js/home-carousels.js?v=1" defer></script>
 </head>
 <body>
 
@@ -28,88 +29,19 @@
   </header>
 
   <main id="main">
-    <div class="home-stream">
+    <section class="home-carousel-layout" aria-label="Image archive ordered by color and light">
+      <section class="home-carousel home-carousel--vertical" aria-label="Portrait images, from light to dark">
+        <div class="home-carousel-viewport" data-carousel="portrait" aria-busy="true">
+          <div class="home-carousel-track home-carousel-track--vertical"></div>
+        </div>
+      </section>
 
-      <!-- FEATURED ITEM 1 — Ice climbing first rock photo -->
-      <div class="home-item home-item--large home-item--center">
-        <a href="/rock/rock-temporarily/">
-          <img
-            src="/assets/images/photography/ice-climbing-01.jpg"
-            alt="Orange climbing rope cutting diagonally across frozen winter rock face and icefalls in snowfall"
-            width="1800" height="1350"
-            loading="eager"
-            fetchpriority="high"
-          >
-          <span class="item-label">Rock</span>
-        </a>
-      </div>
-
-      <!-- FEATURED ITEM 2 — Observation, offset left -->
-      <div class="home-item home-item--large home-item--left">
-        <a href="/collected/">
-          <img
-            src="/assets/images/observations/tulips-ground.jpg"
-            alt="Fallen tulip petals and leaves scattered on dark ground"
-            width="1800" height="1350"
-            loading="lazy"
-          >
-          <span class="item-label">Collected</span>
-        </a>
-      </div>
-
-      <!-- FEATURED ITEM 3 — Vertical rock photograph (Xishuangbanna) -->
-      <div class="home-item home-item--two-thirds-medium home-item--center">
-        <a href="/rock/rock-temporarily/">
-          <img
-            src="/assets/images/photography/xishuangbanna-vertical.jpg"
-            alt="Vertical limestone cliff face and cave arch in Xishuangbanna with hanging canopy and textured rock features"
-            width="1350" height="1800"
-            loading="lazy"
-          >
-          <span class="item-label">Rock</span>
-        </a>
-      </div>
-
-      <!-- FEATURED ITEM 5 — Ceramic piece -->
-      <div class="home-item home-item--small home-item--left">
-        <a href="/clay/">
-          <img
-            src="/assets/images/ceramics/clay-01.jpg"
-            alt="Dark glazed ceramic tea bowl with earthen undertones against natural linen"
-            width="1600" height="1200"
-            loading="lazy"
-          >
-          <span class="item-label">Clay</span>
-        </a>
-      </div>
-
-      <!-- FEATURED ITEM 7 — Travel observation -->
-      <div class="home-item home-item--medium home-item--center">
-        <a href="/collected/">
-          <img
-            src="/assets/images/observations/ferry-deck.jpg"
-            alt="Crowd of passengers gathered on a ferry sun deck under open sky"
-            width="1800" height="1350"
-            loading="lazy"
-          >
-          <span class="item-label">Collected</span>
-        </a>
-      </div>
-
-      <!-- FEATURED ITEM 8 — New York and Around -->
-      <div class="home-item home-item--medium home-item--right">
-        <a href="/new-york-and-around/">
-          <img
-            src="/assets/images/new-york-and-around/ny-around-01.webp"
-            alt="Horse standing beside a wooden fence at the edge of a dark winter woodland"
-            width="810" height="1080"
-            loading="lazy"
-          >
-          <span class="item-label">New York and Around</span>
-        </a>
-      </div>
-
-    </div>
+      <section class="home-carousel home-carousel--horizontal" aria-label="Landscape images, from light to dark">
+        <div class="home-carousel-viewport" data-carousel="landscape" aria-busy="true">
+          <div class="home-carousel-track home-carousel-track--horizontal"></div>
+        </div>
+      </section>
+    </section>
   </main>
 
   <footer class="site-footer">
