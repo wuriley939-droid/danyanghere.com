@@ -9,8 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;1,400&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css?v=23">
-  <script src="/js/home-carousels.js?v=2" defer></script>
+  <link rel="stylesheet" href="/css/style.css?v=25">
+  <script src="/js/home-carousels.js?v=3" defer></script>
+  <script src="/js/moving-films.js?v=1" defer></script>
 </head>
 <body>
 
@@ -36,6 +37,29 @@
         </div>
       </section>
     </section>
+
+    <a class="home-video home-video--way-home" href="/moving/" aria-label="View way home on the Moving page">
+      <video
+        data-autoplay-film
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="/assets/images/videos/on-their-way.jpg"
+        width="1200" height="400"
+        aria-hidden="true"
+      >
+        <source src="/assets/videos/on-their-way.mp4?v=2" type="video/mp4">
+      </video>
+      <img
+        class="video-poster-fallback"
+        src="/assets/images/videos/on-their-way.jpg"
+        alt=""
+        width="1200" height="400"
+      >
+      <span>way home</span>
+    </a>
   </main>
 
   <footer class="site-footer">

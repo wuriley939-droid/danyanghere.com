@@ -1,7 +1,7 @@
 (() => {
   const sources = [
     { src: '/assets/images/photography/xishuangbanna-vertical.jpg', href: '/rock/rock-temporarily/', label: 'rock' },
-    { src: '/assets/images/ceramics/clay-09.jpg', href: '/clay/', label: 'clay' },
+    { src: '/assets/images/ceramics/new/isolated/IMG_0279.webp', href: '/clay/', label: 'clay', orientation: 'portrait', fit: 'contain' },
     { src: '/assets/images/new-york-and-around/ny-around-01.webp', href: '/new-york-and-around/', label: 'new york and around' },
     { src: '/assets/images/new-york-and-around/ny-around-02.webp', href: '/new-york-and-around/', label: 'new york and around' }
   ];
@@ -70,7 +70,7 @@
 
         resolve({
           ...source,
-          orientation: image.naturalHeight / image.naturalWidth >= 1.1 ? 'portrait' : 'landscape',
+          orientation: source.orientation || (image.naturalHeight / image.naturalWidth >= 1.1 ? 'portrait' : 'landscape'),
           width: image.naturalWidth,
           height: image.naturalHeight,
           brightness: 0.65 * mean + 0.35 * luminance(dominant),
@@ -130,6 +130,7 @@
     items.forEach((item) => {
       const link = document.createElement('a');
       link.className = 'home-carousel-item';
+      if (item.fit === 'contain') link.classList.add('home-carousel-item--contain');
       link.href = item.href;
       link.setAttribute('aria-label', `View ${item.label}`);
       if (duplicate) link.tabIndex = -1;

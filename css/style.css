@@ -375,6 +375,14 @@ p {
   transition: transform 0.6s ease;
 }
 
+.home-carousel-item--contain {
+  background: transparent;
+}
+
+.home-carousel-item--contain img {
+  object-fit: contain;
+}
+
 .home-carousel-item span {
   position: absolute;
   left: 0.5rem;
@@ -405,6 +413,58 @@ p {
 
 .home-carousel-viewport:focus-within .home-carousel-track {
   animation-play-state: paused;
+}
+
+.home-video--way-home {
+  position: fixed;
+  right: var(--gutter);
+  bottom: clamp(2rem, 5vh, 4rem);
+  z-index: 20;
+  display: block;
+  width: clamp(190px, 24vw, 300px);
+  aspect-ratio: 3 / 1;
+  overflow: hidden;
+  background: var(--border);
+}
+
+.home-video--way-home video,
+.home-video--way-home .video-poster-fallback {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-video--way-home .video-poster-fallback {
+  display: none;
+}
+
+.home-video--way-home span {
+  position: absolute;
+  right: 0.45rem;
+  bottom: 0.35rem;
+  padding: 0.18rem 0.35rem;
+  color: var(--text-secondary);
+  background: rgba(230, 221, 222, 0.84);
+  font-size: 0.625rem;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+@media (hover: hover) {
+  .home-video--way-home:hover span,
+  .home-video--way-home:focus-visible span {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-video--way-home {
+    right: var(--gutter);
+    bottom: 1.25rem;
+    width: min(48vw, 210px);
+  }
 }
 
 @keyframes home-carousel-up {
@@ -524,6 +584,11 @@ p {
   text-transform: uppercase;
   color: var(--text-tertiary);
   transition: opacity 0.3s ease;
+}
+
+.gallery-item .gallery-caption--literal {
+  line-height: 1.65;
+  text-transform: none;
 }
 
 /* Reveal captions on hover (desktop only) */
