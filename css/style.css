@@ -657,6 +657,29 @@ html.page-clay body {
   object-fit: contain;
 }
 
+/* Source photographs are temporary, deliberately unmasked placeholders.
+   Swap the image source and remove this modifier when a true-alpha asset arrives. */
+.pottery-piece--source-placeholder {
+  max-width: 350px;
+}
+
+.pottery-piece--body {
+  max-width: 390px;
+}
+
+.pottery-piece--environment {
+  max-width: 310px;
+}
+
+.pottery-photograph--source-placeholder,
+.pottery-photograph--environment {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+
 .pottery-caption {
   display: flex;
   align-items: baseline;
@@ -688,6 +711,26 @@ html.page-clay body {
 .pottery-piece--10 { grid-column: 6 / span 3; grid-row: 5; --resting-tilt: 0.5deg; }
 .pottery-piece--11 { grid-column: 9 / span 3; grid-row: 6; margin-top: clamp(7rem, 12vw, 12rem); --resting-tilt: -0.2deg; }
 .pottery-piece--12 { grid-column: 3 / span 4; grid-row: 6; --resting-tilt: 0.25deg; }
+.pottery-piece--13 { grid-column: 2 / span 3; grid-row: 7; --resting-tilt: -0.3deg; }
+.pottery-piece--14 { grid-column: 8 / span 3; grid-row: 7; margin-top: clamp(8rem, 13vw, 13rem); --resting-tilt: 0.25deg; }
+.pottery-piece--15 { grid-column: 5 / span 3; grid-row: 8; --resting-tilt: -0.35deg; }
+.pottery-piece--16 { grid-column: 9 / span 3; grid-row: 8; margin-top: clamp(7rem, 11vw, 11rem); --resting-tilt: 0.4deg; }
+.pottery-piece--17 { grid-column: 1 / span 3; grid-row: 9; margin-top: clamp(2rem, 5vw, 5rem); --resting-tilt: -0.2deg; }
+.pottery-piece--18 { grid-column: 7 / span 4; grid-row: 9; margin-top: clamp(9rem, 14vw, 14rem); --resting-tilt: 0.3deg; }
+.pottery-piece--19 { grid-column: 2 / span 4; grid-row: 10; --resting-tilt: -0.3deg; }
+.pottery-piece--20 { grid-column: 9 / span 3; grid-row: 10; margin-top: clamp(6rem, 10vw, 10rem); --resting-tilt: 0.35deg; }
+.pottery-piece--21 { grid-column: 5 / span 3; grid-row: 11; --resting-tilt: -0.25deg; }
+.pottery-piece--22 { grid-column: 9 / span 3; grid-row: 11; margin-top: clamp(9rem, 14vw, 14rem); --resting-tilt: 0.25deg; }
+.pottery-piece--23 { grid-column: 1 / span 3; grid-row: 12; margin-top: clamp(4rem, 7vw, 7rem); --resting-tilt: -0.4deg; }
+.pottery-piece--24 { grid-column: 6 / span 3; grid-row: 12; --resting-tilt: 0.2deg; }
+.pottery-piece--25 { grid-column: 9 / span 3; grid-row: 13; --resting-tilt: 0.35deg; }
+.pottery-piece--26 { grid-column: 3 / span 3; grid-row: 13; margin-top: clamp(8rem, 12vw, 12rem); --resting-tilt: -0.25deg; }
+.pottery-piece--27 { grid-column: 6 / span 3; grid-row: 14; --resting-tilt: 0.3deg; }
+.pottery-piece--28 { grid-column: 1 / span 3; grid-row: 14; margin-top: clamp(7rem, 12vw, 12rem); --resting-tilt: -0.2deg; }
+.pottery-piece--29 { grid-column: 8 / span 3; grid-row: 15; margin-top: clamp(8rem, 13vw, 13rem); --resting-tilt: 0.25deg; }
+.pottery-piece--30 { grid-column: 3 / span 3; grid-row: 15; --resting-tilt: -0.25deg; }
+.pottery-piece--31 { grid-column: 7 / span 4; grid-row: 16; --resting-tilt: 0.35deg; }
+.pottery-piece--32 { grid-column: 2 / span 3; grid-row: 16; margin-top: clamp(8rem, 13vw, 13rem); --resting-tilt: -0.3deg; }
 
 @media (hover: hover) and (pointer: fine) {
   .pottery-object:hover .pottery-photograph,
@@ -1180,6 +1223,26 @@ a:focus:not(:focus-visible) {
   .pottery-piece--10 { width: 48%; margin-left: 22%; }
   .pottery-piece--11 { width: 52%; }
   .pottery-piece--12 { width: 60%; margin-left: 5%; }
+  .pottery-piece--13 { width: 55%; margin-left: 7%; }
+  .pottery-piece--14 { width: 50%; margin-left: auto; }
+  .pottery-piece--15 { width: 53%; margin-left: 18%; }
+  .pottery-piece--16 { width: 48%; margin-left: auto; }
+  .pottery-piece--17 { width: 57%; }
+  .pottery-piece--18 { width: 64%; margin-left: auto; }
+  .pottery-piece--19 { width: 64%; margin-left: 4%; }
+  .pottery-piece--20 { width: 60%; margin-left: auto; }
+  .pottery-piece--21 { width: 52%; margin-left: 12%; }
+  .pottery-piece--22 { width: 55%; margin-left: auto; }
+  .pottery-piece--23 { width: 48%; margin-left: 6%; }
+  .pottery-piece--24 { width: 50%; margin-left: 25%; }
+  .pottery-piece--25 { width: 52%; margin-left: auto; }
+  .pottery-piece--26 { width: 48%; margin-left: 12%; }
+  .pottery-piece--27 { width: 55%; margin-left: 23%; }
+  .pottery-piece--28 { width: 52%; margin-left: 3%; }
+  .pottery-piece--29 { width: 46%; margin-left: auto; }
+  .pottery-piece--30 { width: 46%; margin-left: 9%; }
+  .pottery-piece--31 { width: 64%; margin-left: auto; }
+  .pottery-piece--32 { width: 54%; margin-left: 7%; }
 
   .pottery-caption {
     opacity: 0.62;
