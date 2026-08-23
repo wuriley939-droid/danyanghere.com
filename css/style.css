@@ -792,18 +792,30 @@ body.pottery-dialog-open {
 }
 
 .video-item--above-trees {
-  width: 140px;
+  width: min(220px, calc(100vw - (2 * var(--gutter))));
 }
 
 .video-item--on-their-way {
-  width: 100px;
+  width: min(300px, calc(100vw - (2 * var(--gutter))));
   margin-top: clamp(6rem, 12vw, 11rem);
   margin-left: clamp(2rem, 14vw, 12rem);
 }
 
 .video-item video {
+  display: block;
   width: 100%;
-  background-color: var(--border);
+  height: auto;
+  background-color: transparent;
+}
+
+.video-item--above-trees video {
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+}
+
+.video-item--on-their-way video {
+  aspect-ratio: 3 / 1;
+  object-fit: cover;
 }
 
 .video-info {
