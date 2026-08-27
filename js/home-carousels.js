@@ -1,7 +1,6 @@
 (() => {
   const sources = [
     { src: '/assets/images/photography/xishuangbanna-vertical.jpg', href: '/rock/rock-temporarily/', label: 'rock' },
-    { src: '/assets/images/ceramics/new/isolated/IMG_0279.webp', href: '/clay/', label: 'clay', orientation: 'portrait', fit: 'contain' },
     { src: '/assets/images/new-york-and-around/ny-around-01.webp', href: '/new-york-and-around/', label: 'new york and around' },
     { src: '/assets/images/new-york-and-around/ny-around-02.webp', href: '/new-york-and-around/', label: 'new york and around' }
   ];
@@ -70,7 +69,7 @@
 
         resolve({
           ...source,
-          orientation: source.orientation || (image.naturalHeight / image.naturalWidth >= 1.1 ? 'portrait' : 'landscape'),
+          orientation: image.naturalHeight / image.naturalWidth >= 1.1 ? 'portrait' : 'landscape',
           width: image.naturalWidth,
           height: image.naturalHeight,
           brightness: 0.65 * mean + 0.35 * luminance(dominant),
@@ -130,7 +129,6 @@
     items.forEach((item) => {
       const link = document.createElement('a');
       link.className = 'home-carousel-item';
-      if (item.fit === 'contain') link.classList.add('home-carousel-item--contain');
       link.href = item.href;
       link.setAttribute('aria-label', `View ${item.label}`);
       if (duplicate) link.tabIndex = -1;
@@ -164,6 +162,19 @@
     track.replaceChildren(makeSequence(cycle, false), makeSequence(cycle, true));
     viewport.setAttribute('aria-busy', 'false');
     viewport.classList.add('is-ready');
+
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      viewport.addEventListener('wheel', (event) => {
+        const animation = track.getAnimations()[0];
+        const duration = Number(animation?.effect?.getComputedTiming().duration);
+        if (!animation || !Number.isFinite(duration) || duration <= 0) return;
+
+        event.preventDefault();
+        const currentTime = Number(animation.currentTime) || 0;
+        const nextTime = ((currentTime + event.deltaY * 2.4) % duration + duration) % duration;
+        animation.currentTime = nextTime;
+      }, { passive: false });
+    }
   };
 
   Promise.allSettled(sources.map(analyze)).then((results) => {
