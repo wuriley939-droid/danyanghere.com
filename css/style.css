@@ -302,80 +302,26 @@ p {
    7. HOMEPAGE
    ============================================================ */
 
-.home-carousel-layout {
+.home-feature-layout {
   padding: var(--space-md) var(--gutter) var(--space-section);
 }
 
-.home-carousel--vertical {
-  width: min(30vw, 390px);
-  height: 68vh;
-  min-height: 460px;
-  min-width: 0;
-}
-
-.home-carousel-viewport {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.home-carousel-viewport.is-ready {
-  opacity: 1;
-}
-
-.home-carousel--vertical .home-carousel-viewport {
-  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent);
-  mask-image: linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent);
-}
-
-.home-carousel-track {
-  display: flex;
-  width: max-content;
-  height: max-content;
-  will-change: transform;
-}
-
-.home-carousel-track--vertical {
-  flex-direction: column;
-  width: 100%;
-  animation: home-carousel-up var(--carousel-duration, 30s) linear infinite;
-}
-
-.home-carousel-sequence {
-  display: flex;
-  flex: none;
-  gap: var(--space-md);
-}
-
-.home-carousel-track--vertical .home-carousel-sequence {
-  flex-direction: column;
-  width: 100%;
-  padding-bottom: var(--space-md);
-}
-
-.home-carousel-item {
+.home-feature {
   position: relative;
   display: block;
-  flex: none;
+  width: min(30vw, 390px);
+  aspect-ratio: 3 / 4;
   overflow: hidden;
   background: var(--border);
 }
 
-.home-carousel--vertical .home-carousel-item {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-}
-
-.home-carousel-item img {
+.home-feature img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease;
 }
 
-.home-carousel-item span {
+.home-feature span {
   position: absolute;
   left: 0.5rem;
   bottom: 0.5rem;
@@ -390,25 +336,13 @@ p {
 }
 
 @media (hover: hover) {
-  .home-carousel-item:hover img {
-    transform: scale(1.015);
-  }
-
-  .home-carousel-item:hover span {
+  .home-feature:hover span {
     opacity: 1;
   }
-
-  .home-carousel-viewport:hover .home-carousel-track {
-    animation-play-state: paused;
-  }
 }
 
-.home-carousel-viewport:focus-within .home-carousel-track {
-  animation-play-state: paused;
-}
-
-@keyframes home-carousel-up {
-  to { transform: translateY(-50%); }
+.home-feature:focus-visible span {
+  opacity: 1;
 }
 
 /* ============================================================
@@ -1183,14 +1117,12 @@ a:focus:not(:focus-visible) {
   }
 
   /* Homepage */
-  .home-carousel-layout {
+  .home-feature-layout {
     padding-top: var(--space-sm);
   }
 
-  .home-carousel--vertical {
+  .home-feature {
     width: min(76vw, 360px);
-    height: 62vh;
-    min-height: 430px;
   }
 
   /* Gallery */
@@ -1327,22 +1259,6 @@ a:focus:not(:focus-visible) {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
-  }
-
-  .home-carousel-viewport {
-    overflow: auto;
-    -webkit-mask-image: none;
-    mask-image: none;
-    scrollbar-width: thin;
-  }
-
-  .home-carousel-track {
-    animation: none !important;
-    transform: none !important;
-  }
-
-  .home-carousel-sequence[aria-hidden="true"] {
-    display: none;
   }
 
   .clay-trace {
